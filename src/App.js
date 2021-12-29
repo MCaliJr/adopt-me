@@ -1,26 +1,19 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 
 const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", { id: "my-brand" }, "Adopt Me!"),
-    React.createElement(Pet, {
-      name: "Chica",
-      animal: "Monkeyyy 🙈",
-      breed: "Marmoset",
-    }),
-    React.createElement(Pet, {
-      name: "Pepper",
-      animal: "Bird",
-      breed: "Cockatiel",
-    }),
-    React.createElement(Pet, {
-      name: "Gizmo ",
-      animal: "Dog",
-      breed: "Bulldog",
-    }),
-  ]);
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <SearchParams />
+    </div>
+  );
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("root")
+);
